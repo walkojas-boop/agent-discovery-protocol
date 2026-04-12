@@ -127,3 +127,54 @@ Walko Systems serves the discovery document at:
 - `regs.walkosystems.com/.well-known/agent-discovery.json`
 
 All endpoints return the identical document, ensuring any entry point leads to full service discovery.
+
+---
+
+## Implementations & Discussions
+
+### Pull Requests (ADP client implementations)
+
+| Framework | PR | Status |
+|-----------|-----|--------|
+| LangChain | [#36688](https://github.com/langchain-ai/langchain/pull/36688) | Open |
+| Microsoft AutoGen | [#7575](https://github.com/microsoft/autogen/pull/7575) | Open |
+| CrewAI | [#5425](https://github.com/crewAIInc/crewAI/pull/5425) | Open |
+| AutoGPT | [#12756](https://github.com/Significant-Gravitas/AutoGPT/pull/12756) | Open |
+| LlamaIndex | [#21368](https://github.com/run-llama/llama_index/pull/21368) | Open |
+| Composio | [#3192](https://github.com/ComposioHQ/composio/pull/3192) | Open |
+| MetaGPT | [#2006](https://github.com/FoundationAgents/MetaGPT/pull/2006) | Open |
+
+### Feature Requests
+
+| Project | Issue |
+|---------|-------|
+| AgentOps | [#1334](https://github.com/AgentOps-AI/agentops/issues/1334) |
+| E2B | [#1265](https://github.com/e2b-dev/E2B/issues/1265) |
+| Browser Use | [#4666](https://github.com/browser-use/browser-use/issues/4666) |
+| Scrapegraph | [#1064](https://github.com/ScrapeGraphAI/Scrapegraph-ai/issues/1064) |
+| Pydantic AI | [#5058](https://github.com/pydantic/pydantic-ai/issues/5058) |
+| LiteLLM | [#25615](https://github.com/BerriAI/litellm/issues/25615) |
+| Smolagents (HuggingFace) | [#2190](https://github.com/huggingface/smolagents/issues/2190) |
+| Haystack | [#11081](https://github.com/deepset-ai/haystack/issues/11081) |
+| Mem0 | [#4802](https://github.com/mem0ai/mem0/issues/4802) |
+| Julep | [#1601](https://github.com/julep-ai/julep/issues/1601) |
+| GPT Researcher | [#1735](https://github.com/assafelovic/gpt-researcher/issues/1735) |
+| Letta | [#3305](https://github.com/letta-ai/letta/issues/3305) |
+| ChatDev | [#609](https://github.com/OpenBMB/ChatDev/issues/609) |
+| CAMEL | [#4002](https://github.com/camel-ai/camel/issues/4002) |
+
+### Live Deployments
+
+| Domain | Discovery URL |
+|--------|--------------|
+| walkosystems.com | [agent-discovery.json](https://walkosystems.com/.well-known/agent-discovery.json) |
+| agents.walkosystems.com | [agent-discovery.json](https://agents.walkosystems.com/.well-known/agent-discovery.json) |
+| memory.walkosystems.com | [agent-discovery.json](https://memory.walkosystems.com/.well-known/agent-discovery.json) |
+| slop.walkosystems.com | [agent-discovery.json](https://slop.walkosystems.com/.well-known/agent-discovery.json) |
+| regs.walkosystems.com | [agent-discovery.json](https://regs.walkosystems.com/.well-known/agent-discovery.json) |
+
+### MCP Server
+
+| Name | Repository |
+|------|-----------|
+| sift-agent-discovery | [GitHub](https://github.com/walkojas-boop/sift-mcp-server) |
