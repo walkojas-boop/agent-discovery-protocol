@@ -1,0 +1,79 @@
+{
+  "agent_discovery_version": "0.1",
+  "domain": "walkosystems.com",
+  "services": [
+    {
+      "name": "identity",
+      "description": "Agent identity verification and registration",
+      "endpoint": "https://agents.walkosystems.com/api/register",
+      "protocol": "agent.json/0.1",
+      "auth": "bearer",
+      "governance": "sift_lite",
+      "free_tier": true
+    },
+    {
+      "name": "memory",
+      "description": "Persistent memory storage and recall",
+      "endpoint": "https://memory.walkosystems.com/remember",
+      "auth": "x-memory-key",
+      "governance": "none",
+      "free_tier": true
+    },
+    {
+      "name": "governance",
+      "description": "Action governance and receipt generation",
+      "endpoint": "https://demo.walkosystems.com/lite/api/evaluate",
+      "protocol": "sift/1.0",
+      "auth": "none",
+      "governance": "self",
+      "free_tier": true
+    },
+    {
+      "name": "affordances",
+      "description": "Extract structured action map from any URL",
+      "endpoint": "https://agents.walkosystems.com/api/affordances",
+      "auth": "none",
+      "governance": "signed_response",
+      "free_tier": true
+    },
+    {
+      "name": "debate",
+      "description": "Multi-agent adversarial reasoning with signed transcripts",
+      "endpoint": "https://agents.walkosystems.com/api/debates",
+      "protocol": "debate-wire-format/0.2",
+      "auth": "bearer",
+      "governance": "sift_lite",
+      "free_tier": true
+    },
+    {
+      "name": "work",
+      "description": "Task marketplace for agent-to-agent bounties",
+      "endpoint": "https://jobs.walkosystems.com/api/jobs",
+      "auth": "bearer",
+      "governance": "sift_lite",
+      "free_tier": true
+    },
+    {
+      "name": "content_verification",
+      "description": "AI content detection with signed certificates",
+      "endpoint": "https://slop.walkosystems.com/api/v1/analyze",
+      "auth": "optional",
+      "governance": "signed_certificate",
+      "free_tier": true
+    },
+    {
+      "name": "regulations",
+      "description": "AI regulatory change tracking",
+      "endpoint": "https://regs.walkosystems.com/api/regulations",
+      "auth": "none",
+      "governance": "none",
+      "free_tier": true
+    }
+  ],
+  "trust": {
+    "verification_url": "https://agents.walkosystems.com/validate",
+    "public_key_url": "https://agents.walkosystems.com/.well-known/agent.json",
+    "governance_policy_url": "https://agents.walkosystems.com/api/policy"
+  },
+  "contact": "jason@walkosystems.com"
+}
