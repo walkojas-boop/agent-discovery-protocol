@@ -31,7 +31,7 @@
     {
       "name": "affordances",
       "description": "Extract structured action map from any URL",
-      "endpoint": "https://agents.walkosystems.com/api/affordances",
+      "endpoint": "http://104.131.168.60:4200/extract",
       "auth": "none",
       "governance": "signed_response",
       "free_tier": true
@@ -67,6 +67,60 @@
       "endpoint": "https://regs.walkosystems.com/api/regulations",
       "auth": "none",
       "governance": "none",
+      "free_tier": true
+    },
+    {
+      "name": "reputation",
+      "description": "Portable, hash-chained, Ed25519-signed agent reputation ledger",
+      "endpoint": "https://reputation.walkosystems.com/v1/entry",
+      "protocol": "arls/0.1",
+      "auth": "none",
+      "governance": "sift_receipt_anchored",
+      "free_tier": true
+    },
+    {
+      "name": "sessions",
+      "description": "Governed agent-to-agent session management with signed message chains",
+      "endpoint": "https://sessions.walkosystems.com/v1/session",
+      "protocol": "asp/0.1",
+      "auth": "none",
+      "governance": "sift_receipt_gated",
+      "free_tier": true
+    },
+    {
+      "name": "capabilities",
+      "description": "Signed capability manifest registry with proof invocations",
+      "endpoint": "https://capabilities.walkosystems.com/v1/manifest",
+      "protocol": "acm/0.1",
+      "auth": "none",
+      "governance": "ed25519_signed",
+      "free_tier": true
+    },
+    {
+      "name": "preflight",
+      "description": "Policy preflight for agent web actions with tier classification",
+      "endpoint": "https://preflight.walkosystems.com/v1/preflight",
+      "protocol": "apps/0.1",
+      "auth": "none",
+      "governance": "sift_tier_gated",
+      "free_tier": true
+    },
+    {
+      "name": "verdicts",
+      "description": "Debate verdict storage with precedent chains and quorum enforcement",
+      "endpoint": "https://verdicts.walkosystems.com/v1/verdict",
+      "protocol": "dvf/0.1",
+      "auth": "none",
+      "governance": "sift_receipt_required",
+      "free_tier": true
+    },
+    {
+      "name": "bootstrap",
+      "description": "Debate session initialization with roster lock and quorum enforcement",
+      "endpoint": "https://bootstrap.walkosystems.com/v1/bootstrap",
+      "protocol": "dsb/0.1",
+      "auth": "none",
+      "governance": "ed25519_signed",
       "free_tier": true
     }
   ],
