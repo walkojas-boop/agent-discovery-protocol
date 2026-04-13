@@ -86,16 +86,22 @@ An agent implementing ADP discovery SHOULD:
 
 The following service names are defined by this specification:
 
-| Name | Purpose |
-|------|---------|
-| `identity` | Agent identity verification and registration |
-| `memory` | Persistent memory storage and recall |
-| `governance` | Action governance and receipt generation |
-| `affordances` | Structured action extraction from URLs |
-| `debate` | Multi-agent adversarial reasoning |
-| `work` | Task marketplace for agent bounties |
-| `content_verification` | AI content detection and certification |
-| `regulations` | AI regulatory change tracking |
+| Name | Purpose | Protocol |
+|------|---------|----------|
+| `identity` | Agent identity verification and registration | agent.json/0.1 |
+| `memory` | Persistent memory storage and recall | — |
+| `governance` | Action governance and receipt generation | sift/1.0 |
+| `affordances` | Structured action extraction from URLs | — |
+| `debate` | Multi-agent adversarial reasoning | debate-wire-format/0.2 |
+| `work` | Task marketplace for agent bounties | — |
+| `content_verification` | AI content detection and certification | — |
+| `regulations` | AI regulatory change tracking | — |
+| `reputation` | Hash-chained, Ed25519-signed agent reputation ledger | arls/0.1 |
+| `sessions` | Governed agent-to-agent session management | asp/0.1 |
+| `capabilities` | Signed capability manifest registry with proof invocations | acm/0.1 |
+| `preflight` | Policy preflight for agent web actions | apps/0.1 |
+| `verdicts` | Debate verdict storage with precedent chains | dvf/0.1 |
+| `bootstrap` | Debate session initialization with roster lock | dsb/0.1 |
 
 Implementations MAY define additional service names.
 
@@ -165,13 +171,16 @@ All endpoints return the identical document, ensuring any entry point leads to f
 
 ### Live Deployments
 
-| Domain | Discovery URL |
-|--------|--------------|
-| walkosystems.com | [agent-discovery.json](https://walkosystems.com/.well-known/agent-discovery.json) |
-| agents.walkosystems.com | [agent-discovery.json](https://agents.walkosystems.com/.well-known/agent-discovery.json) |
-| memory.walkosystems.com | [agent-discovery.json](https://memory.walkosystems.com/.well-known/agent-discovery.json) |
-| slop.walkosystems.com | [agent-discovery.json](https://slop.walkosystems.com/.well-known/agent-discovery.json) |
-| regs.walkosystems.com | [agent-discovery.json](https://regs.walkosystems.com/.well-known/agent-discovery.json) |
+| Domain | Discovery URL | Services |
+|--------|--------------|----------|
+| walkosystems.com | [agent-discovery.json](https://walkosystems.com/.well-known/agent-discovery.json) | 14 |
+| agents.walkosystems.com | [agent-discovery.json](https://agents.walkosystems.com/.well-known/agent-discovery.json) | 14 |
+| reputation.walkosystems.com | [/v1/stats](https://reputation.walkosystems.com/v1/stats) | ARLS |
+| sessions.walkosystems.com | [/v1/stats](https://sessions.walkosystems.com/v1/stats) | ASP |
+| capabilities.walkosystems.com | [/v1/stats](https://capabilities.walkosystems.com/v1/stats) | ACM |
+| preflight.walkosystems.com | [/v1/stats](https://preflight.walkosystems.com/v1/stats) | APPS |
+| verdicts.walkosystems.com | [/v1/stats](https://verdicts.walkosystems.com/v1/stats) | DVF+DQP |
+| bootstrap.walkosystems.com | [/v1/stats](https://bootstrap.walkosystems.com/v1/stats) | DSB |
 
 ### MCP Server
 
