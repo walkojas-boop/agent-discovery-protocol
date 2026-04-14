@@ -67,6 +67,9 @@ Each entry in the `services` array describes one available service:
 | `verification_url` | string | No | URL to validate agent identity. |
 | `public_key_url` | string | No | URL to retrieve the domain's public signing key. |
 | `governance_policy_url` | string | No | URL to retrieve the governance policy document. |
+| `attestations` | array | No | Third-party attestation pointers. Each entry: `{provider, url}`. See [ADP-RFC-001](./rfcs/ADP-RFC-001-trust-attestations.md). |
+
+> **Design rule:** the `trust` object contains only **pointers**. Verifiable claims (scores, sample sizes, freshness timestamps, signatures) live at the attestation URL where they can be verified end-to-end against a trust provider's public key. Embedding verifiable claims directly in the discovery document is self-attestation and is explicitly out of scope for this spec. See [ADP-RFC-001](./rfcs/ADP-RFC-001-trust-attestations.md) for the rationale and the rejected fields list.
 
 ### 3. Cross-Domain Consistency
 
